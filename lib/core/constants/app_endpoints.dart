@@ -4,7 +4,7 @@ class AppEndpoints {
   AppEndpoints._();
 
   static const String baseUrl =
-      'https://cairo-trip-main-production.up.railway.app/api';
+      'https://cairo-trip-main-production-893b.up.railway.app/api';
 
   // ── Auth ──
   static const String login = '/auth/login';

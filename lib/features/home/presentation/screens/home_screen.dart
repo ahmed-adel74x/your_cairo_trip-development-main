@@ -1,5 +1,3 @@
-// lib/features/home/presentation/screens/home_screen.dart
-
 import 'dart:ui' as ui;
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -35,23 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<PlaceModel> _places = PlacesData.cairoPlaces;
   bool _showEmergencyMenu = false;
 
-  // ── بيانات الطوارئ ──
   final Map<String, Map<String, String>> _emergencyContacts = {
-    'ambulance': {
-      'ar': 'الإسعاف',
-      'en': 'Ambulance',
-      'number': '123',
-    },
-    'police': {
-      'ar': 'الشرطة',
-      'en': 'Police',
-      'number': '122',
-    },
-    'fire': {
-      'ar': 'المطافئ',
-      'en': 'Fire',
-      'number': '180',
-    },
+    'ambulance': {'ar': 'الإسعاف', 'en': 'Ambulance', 'number': '123'},
+    'police': {'ar': 'الشرطة', 'en': 'Police', 'number': '122'},
+    'fire': {'ar': 'المطافئ', 'en': 'Fire', 'number': '180'},
   };
 
   @override
@@ -61,12 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  // ── دالة لفتح الاتصال ──
   Future<void> _makeCall(String phoneNumber) async {
-    final Uri launchUri = Uri(
-      scheme: 'tel',
-      path: phoneNumber,
-    );
+    final Uri launchUri = Uri(scheme: 'tel', path: phoneNumber);
     try {
       if (await canLaunchUrl(launchUri)) {
         await launchUrl(launchUri);
@@ -200,7 +181,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
 
-                  // ── زر الطوارئ العائم ──
                   Positioned(
                     bottom: 24.h,
                     right: isAr ? 20.w : null,
@@ -214,7 +194,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
 
-                  // ── زر الطوارئ الرئيسي ──
                   Positioned(
                     bottom: _showEmergencyMenu ? 340.h : 24.h,
                     right: isAr ? 20.w : null,
@@ -234,7 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // ── بناء زر الطوارئ ──
   Widget _buildEmergencyButton() {
     return FloatingActionButton(
       onPressed: () {
@@ -252,7 +230,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // ── بناء كونتينر قائمة الطوارئ ──
   Widget _buildEmergencyMenuContainer(bool isAr, String langCode) {
     return Container(
       padding: EdgeInsets.all(16.w),
@@ -270,10 +247,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment:
-            isAr ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+        crossAxisAlignment: isAr
+            ? CrossAxisAlignment.end
+            : CrossAxisAlignment.start,
         children: [
-          // ── العنوان ──
           Padding(
             padding: EdgeInsets.only(bottom: 12.h),
             child: Text(
@@ -286,16 +263,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // ── خط فاصل ──
           Padding(
             padding: EdgeInsets.only(bottom: 12.h),
-            child: Divider(
-              color: Colors.grey[300],
-              thickness: 1,
-            ),
+            child: Divider(color: Colors.grey[300], thickness: 1),
           ),
 
-          // ── أزرار الطوارئ ──
           ..._emergencyContacts.entries.map((entry) {
             final key = entry.key;
             final data = entry.value;
@@ -347,8 +319,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                    textDirection:
-                        isAr ? ui.TextDirection.rtl : ui.TextDirection.ltr,
+                    textDirection: isAr
+                        ? ui.TextDirection.rtl
+                        : ui.TextDirection.ltr,
                     children: [
                       Container(
                         padding: EdgeInsets.all(8.w),
@@ -386,11 +359,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       SizedBox(width: 8.w),
-                      Icon(
-                        Icons.phone,
-                        color: buttonColor,
-                        size: 18,
-                      ),
+                      Icon(Icons.phone, color: buttonColor, size: 18),
                     ],
                   ),
                 ),

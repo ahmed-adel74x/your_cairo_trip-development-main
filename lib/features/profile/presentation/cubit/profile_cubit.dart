@@ -3,7 +3,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:your_cairo_trip/core/error/failures.dart';
-import 'package:your_cairo_trip/core/utils/paymob/paymob_service.dart';
+import 'package:your_cairo_trip/core/sevices/paymob/paymob_service.dart';
 import 'package:your_cairo_trip/features/profile/data/models/booking_list_model.dart';
 import 'package:your_cairo_trip/features/profile/data/repository/profile_repository.dart';
 import '../../../../core/constants/app_translation_keys.dart';
