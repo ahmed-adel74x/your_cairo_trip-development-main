@@ -2,7 +2,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:your_cairo_trip/core/utils/paymob/paymob_service.dart';
+import 'package:your_cairo_trip/core/sevices/paymob/paymob_service.dart';
 import 'package:your_cairo_trip/features/profile/data/data_source/profile_remote_data_source.dart';
 import 'package:your_cairo_trip/features/profile/data/repository/profile_repository.dart';
 import 'package:your_cairo_trip/features/profile/presentation/cubit/profile_cubit.dart';

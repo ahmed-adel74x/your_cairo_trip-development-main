@@ -2,7 +2,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:your_cairo_trip/core/constants/app_endpoints.dart';
-import 'package:your_cairo_trip/core/utils/paymob/paymob_config.dart';
+import 'package:your_cairo_trip/core/sevices/paymob/paymob_config.dart';
 
 class PaymobService {
   final Dio _dio;
